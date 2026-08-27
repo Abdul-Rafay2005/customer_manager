@@ -1,0 +1,25 @@
+# Core GUI
+PySide6==6.11.2
+
+# Database
+SQLAlchemy==2.0.52
+# (sqlite3 itself is part of the Python standard library - no extra install needed)
+
+# Security
+argon2-cffi==25.1.0
+keyring==25.7.0
+cryptography>=42.0
+# Required by keyring's Windows Credential Locker backend - without this,
+# keyring silently can't use Windows secure storage and falls back to a
+# local key file instead (still safe, but worth having the real backend).
+pywin32>=306; sys_platform == "win32"
+
+# Excel / data import-export (added in Phase 5 but pinned now)
+pandas>=2.2,<3.1
+openpyxl==3.1.5
+
+# Packaging
+pyinstaller>=6.10
+
+# Testing (development only - not needed in the packaged .exe)
+pytest>=8.0
